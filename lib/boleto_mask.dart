@@ -10,12 +10,15 @@ class BoletoMask extends MaskTextInputFormatter {
   static String _startsWith8 =
       '########### # ########### # ########### # ########### #';
 
-  BoletoMask()
-      : super(mask: _maskFor47Chars, filter: {
-          '#': RegExp(
-            r'[0-9]',
-          )
-        });
+  BoletoMask({String initialText})
+      : super(
+            mask: _maskFor47Chars,
+            filter: {
+              '#': RegExp(
+                r'[0-9]',
+              )
+            },
+            initialText: initialText);
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
