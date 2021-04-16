@@ -1,8 +1,7 @@
 name: boleto_mask
-description: A new Flutter package project.
+description: makes easy to masks boletos barcodes.
 version: 0.0.1
-author:
-homepage:
+repository: 'https://github.com/swipetech/boletoMask'
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
