@@ -20,6 +20,9 @@ class BoletoMask extends MaskTextInputFormatter {
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
     final value = newValue.text;
+    if (newValue.text.isEmpty)
+      return super.formatEditUpdate(oldValue, newValue);
+
     if (value.startsWith('8')) {
       if (getMask() != _startsWith8) {
         updateMask(mask: _startsWith8);
