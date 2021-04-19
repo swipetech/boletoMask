@@ -1,14 +1,30 @@
 # boleto_mask
 
-A new Flutter package project.
+A Mask for boletos
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```
+TextField(
+	...,
+	inputFormatters: [
+		BoletoMask(),
+	]
+);
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Using this mask, for any boleto started with 8 it will be masked like:
+
+8############################################### -> 8########## # ########### # ########### # ########### #
+
+for the other cases:
+
+############################################### -> #####.##### #####.###### #####.###### # ##############
+
+## Other uses
+
+```
+final barCode = '11111111111111111111111111111111111111111111111';
+final maskedText = BoletoMask(barCode).getMaskedText(); // 11111.11111 11111.111111 11111.111111 1 11111111111111
+```
+
